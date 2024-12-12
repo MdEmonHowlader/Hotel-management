@@ -279,10 +279,7 @@ def room_management():
     for col in columns:
         tree.heading(col, text=col.capitalize())
         tree.column(col, width=150)
-
     show_rooms()
-
-
 def booking_management():
     def go_back():
         window.destroy()
@@ -295,8 +292,6 @@ def booking_management():
         }
         manage_bookings("add", data=booking_data)
         show_bookings()
-
-  
     def delete_booking():
         booking_id = int(entry_booking_id.get())
         manage_bookings("delete", booking_id=booking_id)
@@ -419,17 +414,6 @@ def staff_management():
             "email": entry_email.get()
         }
         manage_staff("add", data=staff_data)
-        show_staff()
-
-    def update_staff():
-        staff_data = {
-            "name": entry_name.get(),
-            "position": entry_position.get(),
-            "phone": entry_phone.get(),
-            "email": entry_email.get()
-        }
-        staff_id = int(entry_staff_id.get())
-        manage_staff("update", data=staff_data, staff_id=staff_id)
         show_staff()
 
     def delete_staff():
@@ -609,7 +593,6 @@ def manage_services(action, data=None, service_id=None):
             database="hotel_management"
         )
         cursor = conn.cursor()
-
         if action == "add":
             if not data:
                 messagebox.showerror("Error", "Data is required for adding a service!")
