@@ -95,28 +95,28 @@ def guest_management():
     window = tk.Toplevel()
     window.title("Guest Management")
     window.geometry("900x600")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
 
     tk.Label(window, text="Guest Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Input Fields
-    tk.Label(window, text="Name", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=80)
+    tk.Label(window, text="Name", font=("helvetica", 14), bg="LightGray").place(x=50, y=80)
     entry_name = tk.Entry(window, font=("helvetica", 14))
     entry_name.place(x=200, y=80)
 
-    tk.Label(window, text="Phone", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=130)
+    tk.Label(window, text="Phone", font=("helvetica", 14), bg="LightGray").place(x=50, y=130)
     entry_phone = tk.Entry(window, font=("helvetica", 14))
     entry_phone.place(x=200, y=130)
 
-    tk.Label(window, text="Email", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=180)
+    tk.Label(window, text="Email", font=("helvetica", 14), bg="LightGray").place(x=50, y=180)
     entry_email = tk.Entry(window, font=("helvetica", 14))
     entry_email.place(x=200, y=180)
 
-    tk.Label(window, text="Address", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=230)
+    tk.Label(window, text="Address", font=("helvetica", 14), bg="LightGray").place(x=50, y=230)
     entry_address = tk.Entry(window, font=("helvetica", 14))
     entry_address.place(x=200, y=230)
 
-    tk.Label(window, text="ID Proof", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=280)
+    tk.Label(window, text="ID Proof", font=("helvetica", 14), bg="LightGray").place(x=50, y=280)
     entry_id_proof = tk.Entry(window, font=("helvetica", 14))
     entry_id_proof.place(x=200, y=280)
 
@@ -163,28 +163,28 @@ def fetch_guests():
     window = tk.Toplevel()
     window.title("Guest Management")
     window.geometry("800x500")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
 
     tk.Label(window, text="Guest Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Input Fields
-    tk.Label(window, text="Name", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=80)
+    tk.Label(window, text="Name", font=("helvetica", 14), bg="LightGray").place(x=50, y=80)
     entry_name = tk.Entry(window, font=("helvetica", 14))
     entry_name.place(x=200, y=80)
 
-    tk.Label(window, text="Phone", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=130)
+    tk.Label(window, text="Phone", font=("helvetica", 14), bg="LightGray").place(x=50, y=130)
     entry_phone = tk.Entry(window, font=("helvetica", 14))
     entry_phone.place(x=200, y=130)
 
-    tk.Label(window, text="Email", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=180)
+    tk.Label(window, text="Email", font=("helvetica", 14), bg="LightGray").place(x=50, y=180)
     entry_email = tk.Entry(window, font=("helvetica", 14))
     entry_email.place(x=200, y=180)
 
-    tk.Label(window, text="Address", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=230)
+    tk.Label(window, text="Address", font=("helvetica", 14), bg="LightGray").place(x=50, y=230)
     entry_address = tk.Entry(window, font=("helvetica", 14))
     entry_address.place(x=200, y=230)
 
-    tk.Label(window, text="ID Proof", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=280)
+    tk.Label(window, text="ID Proof", font=("helvetica", 14), bg="LightGray").place(x=50, y=280)
     entry_id_proof = tk.Entry(window, font=("helvetica", 14))
     entry_id_proof.place(x=200, y=280)
 
@@ -242,28 +242,28 @@ def room_management():
     window = tk.Toplevel()
     window.title("Room Management")
     window.geometry("900x600")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
 
     tk.Label(window, text="Room Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Input Fields
-    tk.Label(window, text="Room ID", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=80)
+    tk.Label(window, text="Room ID", font=("helvetica", 14), bg="LightGray").place(x=50, y=80)
     entry_room_id = tk.Entry(window, font=("helvetica", 14))
     entry_room_id.place(x=200, y=80)
 
-    tk.Label(window, text="Room Type", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=130)
+    tk.Label(window, text="Room Type", font=("helvetica", 14), bg="LightGray").place(x=50, y=130)
     entry_type = tk.Entry(window, font=("helvetica", 14))
     entry_type.place(x=200, y=130)
 
-    tk.Label(window, text="Availability", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=180)
+    tk.Label(window, text="Availability", font=("helvetica", 14), bg="LightGray").place(x=50, y=180)
     entry_availability = tk.Entry(window, font=("helvetica", 14))
     entry_availability.place(x=200, y=180)
 
-    tk.Label(window, text="Price", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=230)
+    tk.Label(window, text="Price", font=("helvetica", 14), bg="LightGray").place(x=50, y=230)
     entry_price = tk.Entry(window, font=("helvetica", 14))
     entry_price.place(x=200, y=230)
 
-    tk.Label(window, text="Capacity", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=280)
+    tk.Label(window, text="Capacity", font=("helvetica", 14), bg="LightGray").place(x=50, y=280)
     entry_capacity = tk.Entry(window, font=("helvetica", 14))
     entry_capacity.place(x=200, y=280)
 
@@ -328,28 +328,28 @@ def booking_management():
     window = tk.Toplevel()
     window.title("Booking Management")
     window.geometry("900x600")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
 
     tk.Label(window, text="Booking Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Input Fields
-    tk.Label(window, text="Booking ID", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=80)
+    tk.Label(window, text="Booking ID", font=("helvetica", 14), bg="LightGray").place(x=50, y=80)
     entry_booking_id = tk.Entry(window, font=("helvetica", 14))
     entry_booking_id.place(x=200, y=80)
 
-    tk.Label(window, text="Guest ID", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=130)
+    tk.Label(window, text="Guest ID", font=("helvetica", 14), bg="LightGray").place(x=50, y=130)
     entry_guest_id = tk.Entry(window, font=("helvetica", 14))
     entry_guest_id.place(x=200, y=130)
 
-    tk.Label(window, text="Room ID", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=180)
+    tk.Label(window, text="Room ID", font=("helvetica", 14), bg="LightGray").place(x=50, y=180)
     entry_room_id = tk.Entry(window, font=("helvetica", 14))
     entry_room_id.place(x=200, y=180)
 
-    tk.Label(window, text="Check-in Date", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=230)
+    tk.Label(window, text="Check-in Date", font=("helvetica", 14), bg="LightGray").place(x=50, y=230)
     entry_check_in = tk.Entry(window, font=("helvetica", 14))
     entry_check_in.place(x=200, y=230)
 
-    tk.Label(window, text="Check-out Date", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=280)
+    tk.Label(window, text="Check-out Date", font=("helvetica", 14), bg="LightGray").place(x=50, y=280)
     entry_check_out = tk.Entry(window, font=("helvetica", 14))
     entry_check_out.place(x=200, y=280)
 
@@ -373,7 +373,7 @@ def booking_management():
     window = tk.Toplevel()
     window.title("Booking Management")
     window.geometry("800x500")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
     tk.Label(window, text="Booking Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
     # Additional implementation for booking management will go here
 
@@ -472,28 +472,28 @@ def staff_management():
     window = tk.Toplevel()
     window.title("Staff Management")
     window.geometry("900x600")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
 
     tk.Label(window, text="Staff Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Input Fields
-    tk.Label(window, text="Staff ID", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=80)
+    tk.Label(window, text="Staff ID", font=("helvetica", 14), bg="LightGray").place(x=50, y=80)
     entry_staff_id = tk.Entry(window, font=("helvetica", 14))
     entry_staff_id.place(x=200, y=80)
 
-    tk.Label(window, text="Name", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=130)
+    tk.Label(window, text="Name", font=("helvetica", 14), bg="LightGray").place(x=50, y=130)
     entry_name = tk.Entry(window, font=("helvetica", 14))
     entry_name.place(x=200, y=130)
 
-    tk.Label(window, text="Position", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=180)
+    tk.Label(window, text="Position", font=("helvetica", 14), bg="LightGray").place(x=50, y=180)
     entry_position = tk.Entry(window, font=("helvetica", 14))
     entry_position.place(x=200, y=180)
 
-    tk.Label(window, text="Phone", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=230)
+    tk.Label(window, text="Phone", font=("helvetica", 14), bg="LightGray").place(x=50, y=230)
     entry_phone = tk.Entry(window, font=("helvetica", 14))
     entry_phone.place(x=200, y=230)
 
-    tk.Label(window, text="Email", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=280)
+    tk.Label(window, text="Email", font=("helvetica", 14), bg="LightGray").place(x=50, y=280)
     entry_email = tk.Entry(window, font=("helvetica", 14))
     entry_email.place(x=200, y=280)
 
@@ -608,24 +608,24 @@ def service_management():
     window = tk.Toplevel()
     window.title("Service Management")
     window.geometry("900x600")
-    window.configure(bg="paleturquoise")
+    window.configure(bg="LightGray")
 
     tk.Label(window, text="Service Management", font=("times new roman", 20, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Input Fields
-    tk.Label(window, text="Service ID", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=80)
+    tk.Label(window, text="Service ID", font=("helvetica", 14), bg="LightGray").place(x=50, y=80)
     entry_service_id = tk.Entry(window, font=("helvetica", 14))
     entry_service_id.place(x=200, y=80)
 
-    tk.Label(window, text="Service Name", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=130)
+    tk.Label(window, text="Service Name", font=("helvetica", 14), bg="LightGray").place(x=50, y=130)
     entry_name = tk.Entry(window, font=("helvetica", 14))
     entry_name.place(x=200, y=130)
 
-    tk.Label(window, text="Description", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=180)
+    tk.Label(window, text="Description", font=("helvetica", 14), bg="LightGray").place(x=50, y=180)
     entry_description = tk.Entry(window, font=("helvetica", 14))
     entry_description.place(x=200, y=180)
 
-    tk.Label(window, text="Price", font=("helvetica", 14), bg="paleturquoise").place(x=50, y=230)
+    tk.Label(window, text="Price", font=("helvetica", 14), bg="LightGray").place(x=50, y=230)
     entry_price = tk.Entry(window, font=("helvetica", 14))
     entry_price.place(x=200, y=230)
 
