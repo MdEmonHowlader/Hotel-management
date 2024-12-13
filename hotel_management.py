@@ -1,7 +1,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import mysql.connector
-
+# Set the background color to match Facebook's color
+FACEBOOK_BLUE = "#3b5998"
 # Database setup
 def insert_guest(guest_name, phone, email, address, id_proof):
     try:
@@ -29,20 +30,20 @@ def main_window():
     root = tk.Tk()
     root.title("Hotel Management System")
     root.geometry("1000x600")
-    root.configure(bg="paleturquoise")
+    root.configure(bg="LightGray")
 
     # Heading
     tk.Label(root, text="Hotel Management System", font=("times new roman", 24, "bold"), bg="mediumaquamarine", fg="black").pack(pady=10)
 
     # Button frame
-    button_frame = tk.Frame(root, bg="paleturquoise")
+    button_frame = tk.Frame(root, bg="LightGray")
     button_frame.pack(pady=20)
 
-    tk.Button(button_frame, text="Guest Management", font=("helvetica", 14), bg="green3", fg="white", command=guest_management).grid(row=0, column=0, padx=10)
-    tk.Button(button_frame, text="Room Management", font=("helvetica", 14), bg="green3", fg="white", command=room_management).grid(row=0, column=1, padx=10)
-    tk.Button(button_frame, text="Booking Management", font=("helvetica", 14), bg="green3", fg="white", command=booking_management).grid(row=0, column=2, padx=10)
-    tk.Button(button_frame, text="Staff Management", font=("helvetica", 14), bg="green3", fg="white", command=staff_management).grid(row=0, column=3, padx=10)
-    tk.Button(button_frame, text="Service Management", font=("helvetica", 14), bg="green3", fg="white", command=service_management).grid(row=0, column=4, padx=10)
+    tk.Button(button_frame, text="Guest Management", font=("helvetica", 14), bg="DodgerBlue", fg="white", command=guest_management).grid(row=0, column=0, padx=10)
+    tk.Button(button_frame, text="Room Management", font=("helvetica", 14), bg="DodgerBlue", fg="white", command=room_management).grid(row=0, column=1, padx=10)
+    tk.Button(button_frame, text="Booking Management", font=("helvetica", 14), bg="DodgerBlue", fg="white", command=booking_management).grid(row=0, column=2, padx=10)
+    tk.Button(button_frame, text="Staff Management", font=("helvetica", 14), bg="DodgerBlue", fg="white", command=staff_management).grid(row=0, column=3, padx=10)
+    tk.Button(button_frame, text="Service Management", font=("helvetica", 14), bg="DodgerBlue", fg="white", command=service_management).grid(row=0, column=4, padx=10)
 
     root.mainloop()
 
@@ -210,9 +211,9 @@ def room_management():
     def delete_room():
         selected_item = tree.selection()
         if not selected_item:
-            messagebox.showerror("Error", "Please select a guest to delete.")
+            messagebox.showerror("Error", "Please select a room to delete.")
             return
-        guest_id = tree.item(selected_item)["values"][0]
+        room_id = tree.item(selected_item)["values"][0]
         try:
             conn = mysql.connector.connect(
                 host="localhost",
@@ -221,11 +222,11 @@ def room_management():
                 database="hotel_management"
             )
             cursor = conn.cursor()
-            query = '''DELETE FROM guests WHERE guest_id=%s'''
-            cursor.execute(query, (guest_id,))
+            query = '''DELETE FROM rooms WHERE room_id=%s'''
+            cursor.execute(query, (room_id,))
             conn.commit()
-            messagebox.showinfo("Success", "Guest deleted successfully!")
-            show_guests()
+            messagebox.showinfo("Success", "Room deleted successfully!")
+            show_rooms()
         except mysql.connector.Error as err:
             messagebox.showerror("Error", f"Database error: {err}")
         finally:
@@ -293,9 +294,29 @@ def booking_management():
         manage_bookings("add", data=booking_data)
         show_bookings()
     def delete_booking():
-        booking_id = int(entry_booking_id.get())
-        manage_bookings("delete", booking_id=booking_id)
-        show_bookings()
+        selected_item = tree.selection()
+        if not selected_item:
+            messagebox.showerror("Error", "Please select a booking to delete.")
+            return
+        booking_id = tree.item(selected_item)["values"][0]
+        try:
+            conn = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="hotel_management"
+            )
+            cursor = conn.cursor()
+            query = '''DELETE FROM bookings WHERE booking_id=%s'''
+            cursor.execute(query, (booking_id,))
+            conn.commit()
+            messagebox.showinfo("Success", "Booking deleted successfully!")
+            show_bookings()
+        except mysql.connector.Error as err:
+            messagebox.showerror("Error", f"Database error: {err}")
+        finally:
+            conn.close()
+        
 
     def show_bookings():
         for row in tree.get_children():
@@ -408,18 +429,38 @@ def staff_management():
         window.destroy()
     def save_staff():
         staff_data = {
-            "name": entry_name.get(),
-            "position": entry_position.get(),
-            "phone": entry_phone.get(),
-            "email": entry_email.get()
-        }
+        "name": entry_name.get(),
+        "position": entry_position.get(),
+        "phone": entry_phone.get(),
+        "email": entry_email.get()[:50]  # Limit email length to 50 characters
+    }
         manage_staff("add", data=staff_data)
         show_staff()
 
     def delete_staff():
-        staff_id = int(entry_staff_id.get())
-        manage_staff("delete", staff_id=staff_id)
-        show_staff()
+        selected_item = tree.selection()
+        if not selected_item:
+            messagebox.showerror("Error", "Please select a staff member to delete.")
+            return
+        staff_id = tree.item(selected_item)["values"][0]
+        try:
+            conn = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="hotel_management"
+            )
+            cursor = conn.cursor()
+            query = '''DELETE FROM staff WHERE staff_id=%s'''
+            cursor.execute(query, (staff_id,))
+            conn.commit()
+            messagebox.showinfo("Success", "Staff member deleted successfully!")
+            show_staff()
+        except mysql.connector.Error as err:
+            messagebox.showerror("Error", f"Database error: {err}")
+        finally:
+            conn.close()
+     
 
     def show_staff():
         for row in tree.get_children():
@@ -488,7 +529,8 @@ def manage_staff(action, data=None, staff_id=None):
                 messagebox.showerror("Error", "Data is required for adding staff!")
                 return
             query = '''INSERT INTO staff (name, position, phone, email) 
-                       VALUES (%s, %s, %s, %s)'''
+           VALUES (%s, %s, %s, %s)'''
+
             values = (data["name"], data["position"], data["phone"], data["email"])
             cursor.execute(query, values)
 
@@ -533,9 +575,28 @@ def service_management():
         show_services()
 
     def delete_service():
-        service_id = int(entry_service_id.get())
-        manage_services("delete", service_id=service_id)
-        show_services()
+        selected_item = tree.selection()
+        if not selected_item:
+            messagebox.showerror("Error", "Please select a service to delete.")
+            return
+        service_id = tree.item(selected_item)["values"][0]
+        try:
+            conn = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="hotel_management"
+            )
+            cursor = conn.cursor()
+            query = '''DELETE FROM services WHERE service_id=%s'''
+            cursor.execute(query, (service_id,))
+            conn.commit()
+            messagebox.showinfo("Success", "Service deleted successfully!")
+            show_services()
+        except mysql.connector.Error as err:
+            messagebox.showerror("Error", f"Database error: {err}")
+        finally:
+            conn.close()
 
     def show_services():
         for row in tree.get_children():
