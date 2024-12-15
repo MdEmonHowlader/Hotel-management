@@ -1,9 +1,9 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import mysql.connector
-# Set the background color to match Facebook's color
+\
 FACEBOOK_BLUE = "#3b5998"
-# Database setup
+
 def insert_guest(guest_name, phone, email, address, id_proof):
     try:
         conn = mysql.connector.connect(
